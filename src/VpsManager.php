@@ -4,7 +4,6 @@ namespace VpsManager;
 
 class VpsManager
 {
-
     private $adapter;
 
     public function __construct(AdapterInterface $adapter)
