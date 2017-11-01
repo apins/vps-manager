@@ -25,22 +25,22 @@ class VpsManager
     /**
      * Describe $count instances
      *
-     * @param array $names
+     * @param array $ids
      * @return mixed
      */
-    public function describeInstances($names)
+    public function describeInstances(array $ids)
     {
-        return $this->adapter->describeInstances($names);
+        return $this->adapter->describeInstances($ids);
     }
 
     /**
      * Terminate $count instances
      *
-     * @param array $names
+     * @param array $ids
      * @return mixed
      */
-    public function terminateInstances($names)
+    public function terminateInstances(array $ids)
     {
-        return $this->adapter->terminateInstances($names);
+        return $this->adapter->terminateInstances($ids);
     }
 }

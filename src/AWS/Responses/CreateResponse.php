@@ -3,7 +3,7 @@
 namespace VpsManager\AWS\Responses;
 
 use Aws\Result;
-use VpsManager\Models\Instance;
+use VpsManager\Entities\Instance;
 
 class CreateResponse
 {
@@ -24,7 +24,7 @@ class CreateResponse
     {
         return array_map(function ($instance) {
             return new Instance([
-                'name' => array_key_exists('InstanceId', $instance) ? $instance['InstanceId'] : null,
+                'id' => array_key_exists('InstanceId', $instance) ? $instance['InstanceId'] : null,
                 'address' => array_key_exists('PublicIpAddress', $instance) ? $instance['PublicIpAddress'] : null
             ]);
         }, $this->instances);

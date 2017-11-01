@@ -24,7 +24,7 @@ class AwsAdapter extends BaseAdapter implements AdapterInterface
      *    'security-groups'
      * ]
      */
-    public function __construct($config)
+    public function __construct(array $config)
     {
         $this->config = $config;
 
@@ -50,23 +50,23 @@ class AwsAdapter extends BaseAdapter implements AdapterInterface
     }
 
     /**
-     * @param array $names
+     * @param array $ids
      * @return array
      */
-    public function describeInstances($names)
+    public function describeInstances(array $ids)
     {
-        $response = $this->callDescribeInstances($names);
+        $response = $this->callDescribeInstances($ids);
 
         return (new DescribeResponse($response))->getInstances();
     }
 
     /**
-     * @param $names
+     * @param array $ids
      * @return array
      */
-    public function terminateInstances($names)
+    public function terminateInstances(array $ids)
     {
-        $response = $this->callTerminateInstances($names);
+        $response = $this->callTerminateInstances($ids);
 
         return (new TerminateResponse($response))->getInstances();
     }
@@ -76,7 +76,7 @@ class AwsAdapter extends BaseAdapter implements AdapterInterface
      * @param integer $count
      * @return Result
      */
-    private function callRunInstances($config, $count)
+    private function callRunInstances(array $config, $count)
     {
         return $this->client->runInstances([
             'ImageId' => $config['image-id'],
@@ -89,29 +89,29 @@ class AwsAdapter extends BaseAdapter implements AdapterInterface
     }
 
     /**
-     * @param array $names
+     * @param array $ids
      * @return Result
      */
-    private function callDescribeInstances($names)
+    private function callDescribeInstances(array $ids)
     {
         return $this->client->describeInstances([
             'Filters' => [
                 [
                     'Name' => 'instance-id',
-                    'Values' => $names
+                    'Values' => $ids
                 ]
             ]
         ]);
     }
 
     /**
-     * @param $names
+     * @param array $ids
      * @return Result
      */
-    private function callTerminateInstances($names)
+    private function callTerminateInstances(array $ids)
     {
         return $this->client->terminateInstances([
-            'InstanceIds' => $names
+            'InstanceIds' => $ids
         ]);
     }
 }
