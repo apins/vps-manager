@@ -4,12 +4,15 @@ namespace VpsManager\Models;
 
 class Instance
 {
-    public $name;
+    public $id;
     public $address;
 
-    public function __construct($attributes)
+    /**
+     * @param array $attributes
+     */
+    public function __construct(array $attributes)
     {
-        $this->name = array_key_exists('name', $attributes) ? $attributes['name'] : null;
+        $this->id = array_key_exists('id', $attributes) ? $attributes['id'] : null;
         $this->address = array_key_exists('address', $attributes) ? $attributes['address'] : null;
     }
 }

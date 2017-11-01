@@ -24,7 +24,7 @@ class TerminateResponse
     {
         return array_map(function ($instance) {
             return new Instance([
-                'name' => $instance['InstanceId'],
+                'id' => $instance['InstanceId'],
                 'address' => null,
             ]);
         }, $this->terminatedInstances);

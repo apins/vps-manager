@@ -24,7 +24,7 @@ class DescribeResponse
     {
         return array_map(function ($instance) {
             return new Instance([
-                'name' => $instance['InstanceId'],
+                'id' => $instance['InstanceId'],
                 'address' => array_key_exists('PublicIpAddress', $instance) ? $instance['PublicIpAddress'] : null
             ]);
         }, $this->instances);
