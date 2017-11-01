@@ -25,7 +25,7 @@ class AwsAdapter extends BaseAdapter
      */
     public function __construct(array $config)
     {
-        $this->config = $config;
+        parent::__construct($config);
 
         $this->client = new Ec2Client([
             'region' => $config['region'],
