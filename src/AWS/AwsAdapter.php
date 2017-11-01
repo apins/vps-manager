@@ -4,13 +4,12 @@ namespace VpsManager\AWS;
 
 use Aws\Ec2\Ec2Client;
 use Aws\Result;
-use VpsManager\AdapterInterface;
 use VpsManager\AWS\Responses\DescribeResponse;
 use VpsManager\AWS\Responses\TerminateResponse;
 use VpsManager\BaseAdapter;
 use VpsManager\AWS\Responses\CreateResponse;
 
-class AwsAdapter extends BaseAdapter implements AdapterInterface
+class AwsAdapter extends BaseAdapter
 {
     /**
      * @param $config
