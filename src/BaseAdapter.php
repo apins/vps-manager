@@ -2,7 +2,7 @@
 
 namespace VpsManager;
 
-class BaseAdapter
+abstract class BaseAdapter implements AdapterInterface
 {
     protected $client;
     protected $config;
