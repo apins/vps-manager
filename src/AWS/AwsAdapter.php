@@ -12,7 +12,6 @@ use VpsManager\AWS\Responses\CreateResponse;
 
 class AwsAdapter extends BaseAdapter implements AdapterInterface
 {
-
     /**
      * @param $config
      * structure of config [

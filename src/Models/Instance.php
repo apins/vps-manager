@@ -4,7 +4,6 @@ namespace VpsManager\Models;
 
 class Instance
 {
-
     public $name;
     public $address;
 

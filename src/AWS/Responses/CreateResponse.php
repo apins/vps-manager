@@ -7,7 +7,6 @@ use VpsManager\Models\Instance;
 
 class CreateResponse
 {
-
     private $instances;
 
     /**
