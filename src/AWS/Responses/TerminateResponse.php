@@ -3,7 +3,7 @@
 namespace VpsManager\AWS\Responses;
 
 use Aws\Result;
-use VpsManager\Models\Instance;
+use VpsManager\Entities\Instance;
 
 class TerminateResponse
 {

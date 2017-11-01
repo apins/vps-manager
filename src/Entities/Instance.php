@@ -1,6 +1,6 @@
 <?php
 
-namespace VpsManager\Models;
+namespace VpsManager\Entities;
 
 class Instance
 {
