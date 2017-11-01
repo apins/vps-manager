@@ -1,0 +1,25 @@
+{
+    "name": "apins/vps-manager",
+    "authors": [
+        {
+            "name": "Vasily Boriskin",
+            "email": "majesko@gmail.com"
+        }
+    ],
+    "require": {
+        "aws/aws-sdk-php": "^3.36"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "VpsManager\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "VpsManager\\Tests\\": "tests/"
+        }
+    }
+}
